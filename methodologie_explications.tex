@@ -1,0 +1,202 @@
+\PassOptionsToPackage{gray,blue}{xcolor} % pour l'option de xcolor
+\documentclass{beamer} 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage{beamerthemeshadow}
+\usecolortheme{seagull} % couleur du thème Warsaw beaver
+\setbeamercolor*{title}{bg=lightgray,fg=black}
+\setbeamercolor{caption name}{fg=blue}
+\setbeamertemplate{footline}{}
+\usepackage{amsmath} 
+\newcommand{\N}{\mathbb{N}}
+\usepackage{amssymb}
+\usepackage{sidecap} % caption on the side
+\usepackage{bm} % maths en gras
+\usepackage{colortbl} % Couleurs dans les tableaux
+\usepackage{multicol} 
+%\usepackage{xcolor}
+\usepackage{caption}
+\captionsetup[figure]{labelfont={color=blue}}
+\usepackage{upquote} % pour les <<'>> dans le texte
+%\usepackage{pgfpages} % pour imprimer sur deux pages
+%\mode<handout>{\setbeamercolor{backgroundcanvas}{bg=black!20}} % suite
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm] % suite
+
+%\usepackage[gray]{xcolor}
+\setbeamersize{text margin left=0.8em} \setbeamersize{text margin right=1em}
+
+\usepackage{listings} % Ecriture du code
+\newcommand{\monespacegris}{\escapechar={\gray{\textvisiblespace}}}
+\definecolor{fond}{gray}{0.90} % Couleur de fond des lignes de code
+\definecolor{commentscol}{gray}{0.4} % Couleur de fond des lignes de commentaire de code
+\definecolor{tabcol}{gray}{0.75} % Couleur de fond des indentations
+\lstset{tab=\color{tabcol}\rightarrowfill} % tabulations sous formes de flèches
+\lstset{language=Python} % language
+\lstset{backgroundcolor=\color{fond}} % couleur de fond
+\lstset{commentstyle=\ttfamily\color{commentscol}\slshape} % style des commentaires
+\lstset{identifierstyle=\ttfamily\mdseries} % style des identifiants (?)
+
+\lstset{stringstyle=\ttfamily\mdseries} % fonte à chasse fixe pour le code
+\lstset{showstringspaces=false}
+\lstset{showtabs=true} % tabulations visibles
+\lstset{tabsize=4} % longueur des tabulations
+\lstset{xleftmargin=5pt} % décallage vers la droite de tout le code
+\lstset{mathescape=true} %
+\lstset{escapebegin=\color{commentscol}} 
+\lstset{frame = single}
+\lstset{rulecolor = \color{black}} % couleur de l'entourage
+% \lstset{aboveskip = \smallskipamount} % au lieu de \medskipamount
+\lstset{framerule = 1pt} 
+\lstset{inputencoding=utf8, extendedchars=true }
+\lstset{literate={à}{{\`a}}1{é}{{\'e}}1{è}{{\`e}}1{ç}{{\c
+      c}}1{ù}{{\`u}}1{ê}{{\^e}}1{î}{{\^\i}}1{ï}{{\"\i}}1{ô}{{\^o}}1{ë}{{\"e}}1{$'$}{{'}}1{â}{{\^a}}1{û}{{\^u}}1}
+% \lstset{upquote=true} % pour les ' ' droits
+\lstset{inputencoding=utf8} % ne semble pas résoudre les problèmes d'encodage 
+\lstset{morekeywords={plt.plot}} 
+\lstset{morekeywords={show}} 
+\lstset{morekeywords={as}}
+\lstset{morekeywords={lambda}}
+\lstset{morekeywords={as}}
+\lstset{morekeywords={def}} 
+\lstset{morekeywords={append}}
+\lstset{morekeywords={for}} 
+\lstset{morekeywords={import}}
+\lstset{morekeywords={cos}}
+\lstset{morekeywords={lambda}}
+\lstset{morekeywords={range}} 
+\lstset{morekeywords={in}}
+\lstset{morekeywords={grid}} 
+\lstset{morekeywords={np}} 
+\lstset{morekeywords={legend}} 
+\lstset{morekeywords={plot}} 
+\lstset{morekeywords={arange}}
+\lstset{morekeywords={linspace}}
+\lstset{morekeywords={plt}}
+\lstset{keywordstyle=\bfseries\ttfamily} % style des mots clefs
+% \lstset{frame=single} % entourage du code
+% \usepackage{graphicx}
+\usepackage[frenchb]{babel} \setlength{\arrayrulewidth}{1.2pt}
+
+
+
+\title[]{Procédure de sélection des futurs élèves de CPES} % Titre de la première page et en bas à droite
+%\subtitle{Réunion de Fichier test}
+\author{Commission de sélection}
+\date{{mercredi 18 mai 2016}}
+% _____________________________________________________________
+
+\begin{document}
+\section{\hfill Procédure de sélection - CPES} % Affiché en haut à gauche 
+\frame{\titlepage} % Affichage du titre précédent
+
+\logo{\includegraphics[height=1cm,scale=0.3]{naval2.jpg}} 
+
+
+
+\section{\'Etude des dossiers APB}
+\subsection{\'Etude des dossiers APB : qui ?}
+\begin{frame}
+Trois équipes sont constituées :
+  \begin{itemize}
+  \item Anglais-Lettres :  \qquad\;\;\, M\up{me} RIVIERE \& M. BARUCHEL 
+  \item Mathématiques : \qquad \;\,\, M\up{me} DELORME  \& M. BARRAULT  
+  \item Physique :  \qquad \quad \qquad\; M\up{mes} MOUCHE \& SAVIGNY
+  \end{itemize}
+\end{frame}
+\subsection{\'Etude des dossiers APB : comment ?}
+\begin{frame}
+\begin{itemize}
+\item Chaque enseignant attribue une note sur 10 par dossier ; 
+\item Calcul de la moyenne des deux notes ($\rightarrow$ une note par discipline);
+\item Relecture du dossier si écart trop fort des deux notes au sein d'une discipline (requêtes dans la base de données).
+\end{itemize}
+\end{frame}
+
+\subsection{\'Etude des dossiers APB : complément}
+\begin{frame}
+Tout est pris en compte dans l'étude d'un dossier :
+\begin{itemize}
+\item Les commentaires a.p.b. des enseignants, du proviseur ;
+\item Les notes (moyenne), le niveau de la classe, l'origine du dossier ;
+\item L'option et la spécialité de terminale ;
+\item Estimation de la capacité de l'élève à réagir positivement ;
+\item Comportement général, ouverture d'esprit ;
+\item Tout indice supplémentaire (familial, sportif, âge, degré de motivation, expériences, \ldots).
+\end{itemize}
+\end{frame}
+
+
+
+\section{Classement des dossiers}
+\subsection{Calcul de la note attribuée à chaque dossier}
+\begin{frame}
+Chaque dossier reçoit une note $N$ calculée ainsi :
+\begin{large}
+  \begin{equation*}
+    N = \dfrac{\textit{Moy.}_{\textsf{Ang.-Let.}}+\textit{Moy.}_{\textsf{Math.-Sci.}}+\textit{Moy.}_{\textsf{Phys.-Sci.}}}{3}
+  \end{equation*}
+\end{large}
+\end{frame}
+\subsection{Classement avant commission}
+\begin{frame}
+Les dossiers sont classés (premier classement) :
+  \begin{itemize}
+  \item Par ordre décroissant de niveau de bourse (6, 5, 4, \ldots,0-bis, 0, non boursier(-1));
+  \item Par ordre décroissant de note au sein de chaque degré de bourse.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+Ont été ré-étudiés  tous les dossiers  : 
+  \begin{itemize}
+  \item  pour lesquels les deux notes au sein d'une même discipline présentent un écart important ;
+  \item  pour lesquels l'écart entre deux des trois disciplines (math., phys., lettres) présentent un écart trop important ;
+  \item  présentant une originalité (âge du candidat, candidats hors série S, bacheliers, candidat éloigné, \ldots).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+Le classement obtenu (format papier) est issu :
+  \begin{itemize}
+  \item  du classement par ordre décroissant de bourse puis de note au sein de chaque degré de bourse ;
+  \item  du déclassement de candidats pour diverses rasons liées à leur dossier (comportement, anomalies, \ldots) ;
+  \item  du déclassement de ceux dont la note est inférieure à 4,8 ;
+  \item  présentant une originalité (âge du candidat, candidats hors série S, bacheliers, candidat éloigné, \ldots).
+  \end{itemize}
+\end{frame}
+
+\subsection{Classement effectué lors de la  commission}
+\begin{frame}
+La commission va permettre de 
+  \begin{itemize}
+  \item Valider/modifier l'ordre des priorités ;
+  \item Valider/modifier la barre de 4,8 ;
+  \item Apporter des compléments d'information.
+  \item Autres \ldots
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+Comparaison avec l'année 2015:
+
+\begin{center}
+  \begin{tabular}[h]{|l|c|c|}
+    \hline
+    &  2015 & 2016 \\ \hline\hline
+    dossiers complets   & 122    & 167\\ \hline 
+    boursiers retenus   & 19     & 43 \\ \hline
+    barre d'élimination & 3,99 & 4,8 \\ \hline
+    nombre de candidats retenus & 84  & 90$^{(*)}$  \\ \hline
+    classement du dernier admis & 61  & ? \\ \hline
+  \end{tabular}
+\end{center}
+\begin{small}
+  (*) 98 candidats (dont 5 nouveaux boursiers) si barre à 4,5.
+\end{small}
+\end{frame}
+
+
+
+\end{document}
+
+

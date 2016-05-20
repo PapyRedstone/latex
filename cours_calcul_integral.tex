@@ -1,0 +1,377 @@
+\documentclass[A4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[cp1252]{inputenc}
+% Fourier for math | Utopia (scaled) for rm | Helvetica for ss | Latin Modern for tt
+%\usepackage{fourier} % math & rm
+\usepackage[scaled=0.875]{helvet} % ss
+\renewcommand{\ttdefault}{lmtt} %tt
+\usepackage[frenchb]{babel}
+\usepackage{amsmath,amssymb, amsfonts}
+%\usepackage{fancybox}
+\usepackage[normalem]{ulem}
+\usepackage{pifont}
+\usepackage{textcomp} 
+
+%\usepackage{stmaryrd}   % pour \llbracket \rrbracket 
+
+\newcommand{\euro}{\texteuro{}}
+\usepackage{pst-plot,pst-text}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+
+\def\Oij{$\left(\text{O},~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O},~\vect{\imath},~ \vect{\jmath},~ \vect{k}\right)$}
+\def\Ouv{$\left(\text{O},~\vect{u},~\vect{v}\right)$}
+
+\setlength{\textheight}{23,5cm}
+\setlength{\voffset}{-1,5cm}
+
+\newcommand{\ov}[1]		{\overline{#1}}
+\newcommand{\ti}[1]		{\widetilde{#1}}
+\newcommand{\ha}[1]		{\widehat{#1}}
+\newcommand{\ca}[1]		{\mathcal{#1}}
+
+% calcul diff
+\def\dx{\mathop{\rm d$x$}}
+
+%
+
+% guillemets
+\newcommand{\gug}{\guillemotleft}
+\newcommand{\gud}{\guillemotright}
+
+\def\se{\geqslant}
+\def\ie{\leqslant}
+\usepackage{fancyhdr}
+\usepackage[frenchb]{babel}
+
+%\setlength{\topmargin}{-20mm}
+%\setlength{\textheight}{25cm}
+\setlength{\oddsidemargin}{-15mm}
+\setlength{\textwidth}{18cm}
+
+%Compteur pour la numérotation des exercices ci-dessous
+\newcounter{numexo}
+\newcommand{\exo}{\vspace{0.2cm}
+\addtocounter{numexo}{1}%
+\noindent\textbf{Exercice \arabic{numexo}}\quad}
+
+% Macro pour définir le i des nombres complexes
+\newcommand{\ic}{\text{i}}
+% Modification des l'espect des sectionnements
+\renewcommand\thesection{\Roman{section}}
+%\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsection{\arabic{subsection}.}
+%\renewcommand\thesubsubsection{\thesection.\thesubsection.\arabic{subsubsection}}
+\renewcommand\thesubsubsection{\alph{subsubsection})}
+
+%Définition, théorèmen proposition : présentation uniforme
+\def\defi{\medskip\noindent\textbf{\green{Définition}}\newline}
+\def\prop{\medskip\noindent\textbf{\red{Proposition}}\newline}
+\def\theo{\medskip\noindent\textbf{\red{Théorème}}\newline}
+\def\preu{\medskip\noindent\textbf{\red{Preuve}}\newline}
+\def\coro{\medskip\noindent\textbf{\red{Corollaire}}\newline}
+\def\exem{\medskip\noindent\textbf{\blue{Exemple}}\newline}
+\def\exems{\medskip\noindent\textbf{\blue{Exemples}}\newline}
+\def\rema{\medskip\noindent\textbf{\blue{Remarque}}\newline}
+\def\remas{\medskip\noindent\textbf{\blue{Remarques}}\newline}
+\def\nota{\medskip\noindent\textbf{\green{Notation}}\newline}
+
+%Opérateurs différentiels
+\def\dt{\text{d}\textit{t}}
+\def\dx{\text{d}\textit{x}}
+\def\inta{\int_a^b}
+
+
+\begin{document}
+\rfoot{\small Lycée Naval } 
+\large{LYC\'EE NAVAL \hfill Terminale S1}
+\vspace{1cm}
+
+\begin{center}{\Large \textbf{\gray Mathématiques}}\end{center}
+\begin{center}\rule{2cm}{1pt}\end{center}
+\begin{center}\framebox{{\Large Calcul intégral}}\end{center} % Mettre  le sujet traité dans cette fiche d'exercices
+\vspace{0.5cm}
+%\tableofcontents
+%\newpage
+
+
+
+\section{Définition de l'intégrale d'une fonction continue positive.}
+\subsection{Notation de l'intégrale}
+
+\defi \textbf{Définition}
+Dans un repère orthogonal $ \left(O,\overrightarrow{i},\overrightarrow{j}\right) $ , on note $O(0;0), I(1;0), K(1;1)$ et $ J(0;1) $. \\
+Alors l'aire de $ OIJK $ est appelé \textbf{unité d'aire (notation u.a.)}.
+
+\nota Soient $f$ une fonction continue et positive sur un intervalle $I$ et $(a,b) \in I^2$ avec $a<b$ .
+L'aire (algébrique) délimité par l'axe les droites d'équations x=a, x=b, l'axe des abscisses et la courbe $\ca C_f$ est notée
+\[ \int_a^b f(x)\dx,  \]
+on prononce "intégrale de $a$ à $b$ de $f(x)dx$".\\
+Cette aire est parfois notée $\int f$ ou  $\int_{[a,b]}$s'il n'y a pas ambiguïté.\\
+Les réels $ a $ et $ b $ sont appelés les bornes de l'intégrale.
+
+\remas
+\begin{enumerate}
+\item En toute rigueur, on définit la notion d'intégrale pour une fonction constante, puis pour les fonction continues en escalier, puis on démontre que ces fonctions "approchent"
+toute fonction continue et que les intégrales de suites de fonction escalier "convergeant" vers une fonction continue convergent elle-même.
+\item Exemple fondamental : calcul, pour $ x>1 $ de \[ S(x) = \int_1^x \frac{1}{t} \text{d}t \]
+\begin{center}
+\psset{xunit=1cm,yunit=1cm}
+\begin{pspicture*}(-0.8,-0.6)(6.2,3)
+\psgrid[subgriddiv=1,gridlabels=0,gridcolor=lightgray](0,0)(-0.49,-0.2)(8,3)
+\psset{xunit=2.0cm,yunit=2.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1,Dy=1,ticksize=-2pt 0,subticks=2]{->}(0,0)(-0.2,-0.2)(4,1.5)
+\pscustom[fillcolor=gray,fillstyle=solid,opacity=0.1]{\psplot{1}{2.36}{1/x}\lineto(2.36,0)\lineto(1,0)\closepath}
+\pscustom[fillcolor=white,fillstyle=solid,opacity=0.1]{\psplot{2.36}{2.7}{1/x}\lineto(2.7,0)\lineto(2.36,0)\closepath}
+\psplot[plotpoints=200, linewidth=1.5pt]{0.001}{4.0}{1/x}
+\begin{small}
+\psdots[dotstyle=*](2.36,0)
+\rput[bl](2.33,-0.18){{$t_0$}}
+\psdots[dotstyle=*](2.7,0)
+\rput[bl](2.65,-0.16){{$t$}}
+\end{small}
+\psline(2.36,0)(2.36,0.4)
+\end{pspicture*}
+\psset{xunit=1cm,yunit=1cm}
+\begin{pspicture*}(-0.78,-0.74)(6,3)
+\psgrid[subgriddiv=0,gridlabels=0,gridcolor=lightgray](0,0)(-0.1,-0.1)(5,3)
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1,Dy=1,ticksize=-2pt 0,subticks=2]{->}(0,0)(-0.16,-0.15)(5,3)
+\pspolygon[,fillcolor=lightgray,fillstyle=solid,opacity=0.4](2.36,0)(2.36,0.43)(3,0.43)(3,0)
+\pspolygon[fillcolor=gray,fillstyle=solid,opacity=0.1](3,0)(3,0.29)(2.36,0.29)(2.36,0)
+\psplot[plotpoints=200, linewidth = 0.4pt]{0.01}{5}{1/x}
+%\psline(1.28,3.31)(1.73,3.31)
+%\psline[](2.36,0)(2.35,0.43)
+%\psline[](2.35,0.43)(3.01,0.41)
+%\psline[](3.01,0.41)(3,0)
+%\psline[](3,0)(2.36,0)
+%\psline[](3,0)(3.01,0.29)
+%\psline[](3.01,0.29)(2.35,0.34)
+%\psline[](2.35,0.34)(2.36,0)
+%\psline[](2.36,0)(3,0)
+\begin{scriptsize}
+\psdots[dotstyle=*](1.44,3.31)
+\rput[bl](1.39,3.36){$t = 2.36$}
+%\psdots[dotstyle=*](2.36,0)
+%\psdots[dotstyle=*](2.35,0.43)
+%\psdots[dotstyle=*](3.01,0.41)
+%\psdots[dotstyle=*](3,0)
+%\psdots[dotstyle=*](3.01,0.29)
+%\psdots[dotstyle=*](2.35,0.34)
+\end{scriptsize}
+\end{pspicture*}
+
+\end{center}
+
+
+Soit alors $ t_0 \in [1;t] $ alors (figure !) $S(t_0)$ est l'aire ... (cf figure). Encadrons $ \frac{S(t)-S(t_0)}{t-t_0}  \xrightarrow[t\to t_0]{}\frac{1}{t_0}  $.Donc $ S $ est dérivable à droite en $ t_0 $.\\
+De même on démontre que $ S $ est dérivable à gauche en $ t_0 $.\\
+Bilan : \[ S'(t_0) = \frac{1}{t_0}. \]
+Donc $ S'(x) = \frac{1}{x} $. Regardons $ f(x) =\ln x - S(x) $. ... donc $ S(x) = \ln x $.				
+\item Autre exemple : $ \int_0^1 \sqrt{1-x^2}\dx = \frac{\pi}{4} $.
+
+\end{enumerate}
+
+\prop \textbf{Calcul de l'aire située entre deux courbes $ \ca C_f $ et  $ \ca C_g $}
+\[ \int f - \int g \]
+
+
+\remas D'après les t, on a les égalités suivantes : 
+\[ \int_{[a,b]}f = \int_{[a,b[}f = \int_{]a,b]}f = \int_{]a,b[}f  \]
+
+
+\defi En reprenant les notations précédentes, et avec $f$ une fonction négative, alors
+\[ \int_a^b f(x)\dx,  \]
+est l'opposé de l'aire (algébrique) $\int_a^b(-f(x))\dx$
+
+\exem $ \int_0^1 (-3)\dx = -3 $.
+
+\subsection{Premières propriétés}
+
+Avec toujours $f$ continue positive sur $I$, $(a,b,c)\in I^3$ avec $a<b<c$.
+
+\prop \textbf{Relation de Chasles : }
+	\[  \int_a^b f + \int_b^c f = \int_a^c f \]
+
+Application :
+\nota Cas d'une fonction continue changeant de signe (sur un exemple).\\
+On suppose $f$ continue sur $I$ et $(a,b,c)\in I^3$ avec
+$a<b<c$, $f\geqslant 0$ sur $[a,b]$ et $f\leqslant 0$ sur $[b,c]$ alors
+\[ \int_{a}^cf(x)\dx   \]
+est la différence des aires (positives) $ \int_a^bf - \int_b^c(-f)$
+
+\prop Croissance de l'intégrale de fonctions positives : si $0\leqslant f \leqslant g$ continues sur $I$ alors
+\[ \int f \leqslant \int g  \]
+
+
+
+
+
+
+\section{Propriétés de l'intégrale}
+
+La dernière propriété est aussi la conséquence de la propriété plus générale suivante:
+Dans tout ce paragraphe, $(a,b)\in I^2$ et $a<b$.
+
+\prop \textbf{Linéarité de l'intégrale} \\
+Soient deux fonctions continues sur $I$, $(\alpha,beta) \in \R^2$ alors :
+	\[ \int_a^b (\alpha f + \beta g) = \alpha \int_a^b f + \beta \int_a^b g  \]
+
+\coro \textbf{Inversion des bornes}\\
+	\[ \int_a^b f = -\int_b^a f  \]
+
+\coro \textbf{Mêmes bornes}\\
+	\[ \int_a^a f=0  \]
+
+
+\prop \textbf{Positivité de l'intégrale}\\
+	Si $ a \leqslant b $ et si $ f \geqslant 0 $ sur $ [a,b] $ alors $ \inta f \geqslant 0 $.
+
+\rema Attention, la réciproque est fausse. Contre exemple avec $a=0, b=3$.
+
+\coro \textbf{Stricte positivité :}\\
+	Si $ f \geqslant 0  $ sur $ [a,b] $ et si $ \inta f = 0  $ alors $ f = 0 $ sur $ [a,b] $.
+
+\coro \textbf{Croissante de l'intégrale}\\
+	Si $ a \leqslant b $ et si $ f \leqslant g $ sur $ [a,b] $ alors $ \inta f \leqslant \inta g $.
+
+\rema Attention, la réciproque est fausse.
+
+\exem Décroissante de $ \frac{1}{t} $ entre $ k $ et $ k+1 $ et conséquence : $ \ln(n+1) \leqslant \sum_{k=1}^{n}\frac{1}{k} $.
+
+\begin{center}
+FIGURE
+\end{center}
+\coro \textbf{Intégrale d'une valeur absolue}
+	De plus : $ \qquad \left| \int_a^b f\right| \leqslant \int_a^b |f| $.
+
+
+\section{Moyennes}
+Soit $f$ continue sur $I$ et $(a,b)\in I^2$, $a \neq b$.
+
+\subsection{Inégalité de la moyenne}
+Si on a,  sur $[a,b]$
+\[ m \leqslant f \leqslant M, \]
+alors 
+\[ m(b-a) \leqslant \int_a^b f \leqslant M(b-a).  \]
+
+\begin{center}
+FIGURE (entourer l'aire de deux rectangles.)
+\end{center}
+
+\coro Avec les mêmes notations, on a : 
+\[ m \leqslant \frac{1}{b-a} \int_a^b  f \leqslant M. \]
+
+\subsection{Valeur moyenne}
+
+\defi Le nombre réel
+\[ \frac{1}{b-a}\int_a^b f \]
+est appelé \textbf{valeur moyenne de $f$} sur $[a,b]$.
+
+Interprétation géométrique :
+\begin{center}
+FIGURE
+\end{center}
+
+
+\section{Primitive d'une fonction continue}
+\subsection{Définition}
+\defi
+Soient $ f $ et $ F $ deux fonction définies sur un intervalle $ I $ de $ \R $.
+
+On dit que $ F $ est une primitive de $ f $ si $ F $ est dérivable sur $ I $ et si $ F'=f $.
+
+
+\prop \textbf{Unicité de la primitive à une constante près}\\
+Soient $F$ et $G$ deux primitives d'une fonction $f$ alors il existe $c \in \R$ telle que 
+\[ F=G+c  \]
+
+\begin{center}
+FIGURE (courbes parallèles)
+\end{center}
+
+\prop \textbf{Unicité de la primitive passant par un point.}
+
+Soient $x_0 \in [a,b]$ et $y_0 \in \R$ et supposons que $f$ admette des primitives.\\
+Alors il existe une unique primitive $F$ de $f$ vérifiant l'égalité
+\[ F(x_0)=y_0.  \]
+\begin{center}
+FIGURE (courbe unique passant par un point.)
+\end{center}
+
+
+\subsection{Théorème fondamental : existence de primitives}
+
+\theo
+Soit $ f $ une fonction continue sur un intervalle $ I $ de $ \R $ et soit $ a \in I $.
+
+L'application $ \displaystyle \phi : x \mapsto \int_a^x f(t)\dt $ est une primitive de $ f $ : 
+\[ \forall x \in I, \quad \phi'(x) = f(x) \quad \text{et} \quad \phi(a) = 0 \]
+De plus, cette primitive est l'unique primitive de $f$ qui s'annule en $ a $.
+
+\preu Dans le cas où $f$ est continue, positive et croissante.
+
+\rema Ce théorème proubve qu'il existe de primitives pour les fonction continues, mias il ne donne pas de formule
+explicite de ces primitives. Trouver par exemple une primitive de $x \mapsto \frac{1}{1+x^2} $ ou $x \mapsto e^{-x^2}  $ sur $\R$.
+
+\subsection{Conséquences}
+dfghdfmg
+\coro 
+Toute fonction continue sur un intervalle $ I $ possède donc des primitives qui sont la fonction de la forme $ \phi + C $ 
+où $ C $ est une constante quelconque.
+
+\coro \textbf{Fondamental en pratique}
+Si $ F $ est une primitive de $ f $ sur $ [a,b] $ alors :
+\[ \int_a^b f(t) \dt = \left[ F \right]_a^b = F(b)-F(a) \]
+De plus, la valeur de cette intégrale ne dépend pas de la primitive (ici $F$) choisie.
+
+
+\section{Calcul des intégrales}
+\subsection{Calculs de primitives usuelles.}
+
+Les classiques à connaître : 
+\begin{itemize}
+\item $x^n$ (n>1)
+\item $x^n$ (n<-1)
+\item $\frac{1}{x}$
+\item $e^{ax}$ ($a\in \R$)
+\item $\cos$
+\item $\sin$
+\item $\tan$ (plus diff., voir ci-dessous)
+\end{itemize}
+
+\subsection{Opérations sur les primitives}
+
+\begin{itemize}
+\item 
+\end{itemize}
+Tableau de primitives : fonctions usuelles et opérations+composition.
+\begin{itemize}
+\item $u'u^n$ (n>1)
+\item $\frac{u'}{u^n}$ (n>1)
+\item $\frac{u'}{u}$ (le grand classique)
+\item $\frac{u'}{\sqrt{u}}$
+\item $u'e^{u}$.
+\end{itemize}
+
+
+
+\subsection{L'intégration par partie}  
+Soient $ f $ et $ g $ de classe $ C^1 $ sur $ [a,b] $ alors :
+
+\[ \inta f(t)g'(t)\dt  = \left[ f(t)g(t )\right]_a^b - \inta f'(t)g(t)\dt \]
+
+
+
+
+
+\end{document}
